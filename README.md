@@ -41,10 +41,10 @@ article per day using Google Gemini AI. Zero ongoing effort after setup.
 1. In your forked repo, go to **Settings → Secrets and variables → Actions**
 2. Click **New repository secret** and add:
 
-| Secret name            | Value                    |
-|------------------------|--------------------------|
-| `GEMINI_API_KEY`       | Your Gemini API key      |
-| `AMAZON_AFFILIATE_TAG` | Your tag, e.g. `mysite-20` |
+| Secret name            | Value                          |
+|------------------------|--------------------------------|
+| `GROQ_API_KEY`         | Your Groq API key              |
+| `AMAZON_AFFILIATE_TAG` | Your tag, e.g. `mysite-20`    |
 
 ### Step 5 — Enable GitHub Pages
 
