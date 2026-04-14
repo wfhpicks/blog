@@ -21,6 +21,7 @@ import random
 from datetime import datetime
 from pathlib import Path
 
+import requests
 from groq import Groq
 
 # ── Config ───────────────────────────────────────────────────────────────────
@@ -31,13 +32,42 @@ POSTS_DIR = REPO_ROOT / "_posts"
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 AFFILIATE_TAG = os.environ.get("AMAZON_AFFILIATE_TAG", "YOURAFFLTAG-20")
+PEXELS_API_KEY = os.environ.get("PEXELS_API_KEY", "")
 
 if not GROQ_API_KEY:
     print("ERROR: GROQ_API_KEY environment variable is not set.")
     sys.exit(1)
 
 
-# ── Topic selection ───────────────────────────────────────────────────────────
+# ── Pexels image fetch ────────────────────────────────────────────────────────
+def fetch_hero_image(query: str) -> dict | None:
+    """Fetch a relevant hero image from Pexels. Returns dict with url, photographer info."""
+    if not PEXELS_API_KEY:
+        return None
+    try:
+        resp = requests.get(
+            "https://api.pexels.com/v1/search",
+            headers={"Authorization": PEXELS_API_KEY},
+            params={"query": query, "per_page": 5, "orientation": "landscape"},
+            timeout=10,
+        )
+        resp.raise_for_status()
+        photos = resp.json().get("photos", [])
+        if not photos:
+            return None
+        photo = photos[0]
+        return {
+            "url": photo["src"]["large"],
+            "photographer": photo["photographer"],
+            "photographer_url": photo["photographer_url"],
+            "pexels_url": photo["url"],
+        }
+    except Exception as e:
+        print(f"Warning: Could not fetch Pexels image: {e}")
+        return None
+
+
+
 def pick_topic() -> dict:
     topics = json.loads(TOPICS_FILE.read_text(encoding="utf-8"))["topics"]
     used = json.loads(USED_FILE.read_text(encoding="utf-8"))["used_ids"]
@@ -167,12 +197,31 @@ def main():
 
     topic = pick_topic()
     print(f"Topic: {topic['title']}")
-    print("Calling Groq API (llama-3.3-70b)...")
 
+    # Fetch hero image from Pexels
+    print("Fetching hero image from Pexels...")
+    image = fetch_hero_image(topic["amazon_search"])
+
+    print("Calling Groq API (llama-3.3-70b)...")
     content = generate_post_content(topic)
     content = fix_markdown_spacing(content)
-    path = save_post(topic, content)
 
+    # Prepend hero image to post body
+    if image:
+        hero_md = (
+            f'<figure class="hero-image">\n'
+            f'  <img src="{image["url"]}" alt="{topic["title"]}" loading="lazy" />\n'
+            f'  <figcaption>Photo by <a href="{image["photographer_url"]}" '
+            f'target="_blank" rel="noopener">{image["photographer"]}</a> on '
+            f'<a href="{image["pexels_url"]}" target="_blank" rel="noopener">Pexels</a></figcaption>\n'
+            f'</figure>\n\n'
+        )
+        content = hero_md + content
+        print(f"Hero image: {image['url'][:60]}...")
+    else:
+        print("No hero image (PEXELS_API_KEY not set or fetch failed)")
+
+    path = save_post(topic, content)
     print(f"Done! New post written: {path}")
 
 

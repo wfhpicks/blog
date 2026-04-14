@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Best Budget Office Chairs Under $150 That Actually Support Your Back"
-date: 2026-04-14
+date: 2026-04-13
 categories: [reviews, home-office]
 tags: [budget-office-chair, affordable-ergonomic-chair, cheap-office-chair-back-support]
 description: "When it comes to setting up a home office, a good budget office chair is essential for productivity and comfort."
@@ -9,6 +9,11 @@ keywords: "budget office chair, affordable ergonomic chair, cheap office chair b
 image: /assets/images/og-default.png
 amazon_search: "budget ergonomic office chair"
 ---
+
+<figure class="hero-image">
+  <img src="https://images.pexels.com/photos/31726669/pexels-photo-31726669.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="budget ergonomic office chair" loading="lazy" />
+  <figcaption>Photo by <a href="https://www.pexels.com/@alphaen" target="_blank" rel="noopener">Alpha En</a> on <a href="https://www.pexels.com/photo/modern-home-office-with-ergonomic-chair-and-greenery-31726669/" target="_blank" rel="noopener">Pexels</a></figcaption>
+</figure>
 
 When it comes to setting up a home office, a good budget office chair is essential for productivity and comfort. However, finding an affordable ergonomic chair that actually supports your back can be a challenge. Many cheap office chairs sacrifice comfort and support for a lower price point, leaving you with aches and pains after a long day of work. But don't worry, we've got you covered. In this post, we'll explore the best budget office chairs under $150 that prioritize back support and comfort, so you can stay focused and healthy while working from home.
 

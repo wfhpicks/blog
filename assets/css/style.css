@@ -63,6 +63,27 @@ body {
 .post-list a:hover { text-decoration: underline; }
 .post-excerpt { font-size: 0.875rem; color: var(--text-light); margin-top: 0.25rem; }
 
+/* ── Hero image ──────────────────────────────────────────────── */
+.hero-image {
+  margin: 0 0 1.75rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hero-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+.hero-image figcaption {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-align: right;
+  padding: 0.25rem 0.5rem 0;
+}
+.hero-image figcaption a { color: var(--text-light); }
+
 /* ── Post ────────────────────────────────────────────────── */
 .post { padding-bottom: 3rem; }
 .post-title { font-size: 2rem; line-height: 1.3; margin-bottom: 0.5rem; }
