@@ -1,7 +1,7 @@
 """
 generate_post.py
 ----------------
-Automated blog post generator for Budget Desk HQ.
+Automated blog post generator for WFH Picks.
 Calls Groq API (free tier, llama-3.3-70b) to write SEO-optimized
 affiliate posts, saves them as Jekyll markdown files in _posts/.
 
@@ -162,7 +162,7 @@ def save_post(topic: dict, content: str) -> Path:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
-    print("Budget Desk HQ -- Automated Post Generator")
+    print("WFH Picks -- Automated Post Generator")
     print("=" * 50)
 
     topic = pick_topic()

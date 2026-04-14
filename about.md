@@ -1,12 +1,12 @@
 ---
 layout: default
-title: About Budget Desk HQ
+title: About WFH Picks
 permalink: /about/
 ---
 
-# About Budget Desk HQ
+# About WFH Picks
 
-Budget Desk HQ is a product review and buying guide site dedicated to helping
+WFH Picks is a product review and buying guide site dedicated to helping
 remote workers and home office enthusiasts build a great workspace without
 overspending.
 
@@ -20,7 +20,7 @@ cut through the marketing noise.
 
 ## Affiliate Disclosure
 
-Budget Desk HQ participates in the Amazon Services LLC Associates Program,
+WFH Picks participates in the Amazon Services LLC Associates Program,
 an affiliate advertising program designed to provide a means for sites to earn
 advertising fees by advertising and linking to Amazon.com.
 

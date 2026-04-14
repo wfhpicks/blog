@@ -1,4 +1,4 @@
-# 🖥️ Budget Desk HQ — Automated SEO Affiliate Blog
+# 🖥️ WFH Picks — Automated SEO Affiliate Blog
 
 An automated blog that publishes one SEO-optimized, Amazon-affiliate-monetized
 article per day using Google Gemini AI. Zero ongoing effort after setup.
