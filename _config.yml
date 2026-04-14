@@ -17,7 +17,7 @@ minima:
   skin: classic
 
 # Affiliate tag placeholder — replace with your Amazon Associates tag
-amazon_affiliate_tag: "YOURAFFLTAG-20"
+amazon_affiliate_tag: "wfhpicks-20"
 
 # SEO defaults
 defaults:
@@ -27,7 +27,7 @@ defaults:
     values:
       layout: "post"
       comments: false
-      amazon_affiliate_tag: "YOURAFFLTAG-20"
+      amazon_affiliate_tag: "wfhpicks-20"
 
 # Build settings
 markdown: kramdown
