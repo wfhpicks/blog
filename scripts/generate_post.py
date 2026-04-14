@@ -109,19 +109,20 @@ REQUIREMENTS:
 1. Length: 1,200-1,600 words (critical for SEO).
 2. Structure:
    - Opening paragraph with the primary keyword in the first 100 words.
-   - "What to Look For" section (3-4 key buying criteria with brief explanations).
-   - "Our Top Picks" section with 4-5 specific product recommendations.
-     For each product include: product name, estimated price range, 2-3 pros, 1 con,
-     and who it is best for. Use H3 headings per product (not markdown tables).
-   - "Budget Tips" section: 2-3 tips to get the best value.
-   - Conclusion paragraph with a call to action linking to Amazon search.
+   - "## What to Look For" section (3-4 key buying criteria with brief explanations).
+   - "## Our Top Picks" section with 4-5 specific product recommendations.
+     For each product use this EXACT heading format — a clickable Amazon search link:
+     ### [Product Name](https://www.amazon.com/s?k=Product+Name&tag={AFFILIATE_TAG})
+     Then include: estimated price range, 2-3 pros, 1 con, and who it is best for.
+   - "## Budget Tips" section: 2-3 tips to get the best value.
+   - Conclusion paragraph ending with this exact link:
+     [Browse all options on Amazon ->]({amazon_search_url})
 3. Tone: Friendly, practical, and trustworthy. No fluff.
 4. Include secondary keywords naturally throughout.
-5. At the end of the post, include EXACTLY this markdown link:
-   [Browse all options on Amazon ->]({amazon_search_url})
-6. Do NOT include any affiliate disclosure text.
-7. Output ONLY the blog post body in markdown. No frontmatter. No title heading at the top.
-   Start with the opening paragraph directly."""
+5. Do NOT include any affiliate disclosure text.
+6. Output ONLY the blog post body in markdown. No frontmatter. No title heading at the top.
+   Start with the opening paragraph directly.
+7. CRITICAL: Do not output bare # or ## or ### on a line by itself. Every heading must have text after it."""
 
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
@@ -133,7 +134,9 @@ REQUIREMENTS:
 
 
 def fix_markdown_spacing(content: str) -> str:
-    """Ensure blank lines before/after headings for proper markdown rendering."""
+    """Normalize markdown: fix heading spacing and strip LLM artifacts."""
+    # Remove lone # / ## / ### lines with no text (common LLM artifact)
+    content = re.sub(r'(?m)^#{1,3}\s*$', '', content)
     # Handle headings with NO preceding newline (LLM sometimes outputs text## Heading)
     content = re.sub(r'([^\n])(#{1,3} )', r'\1\n\n\2', content)
     # Handle headings with only a single preceding newline

@@ -17,47 +17,31 @@ amazon_search: "budget ergonomic office chair"
 
 When it comes to setting up a home office, a good budget office chair is essential for productivity and comfort. However, finding an affordable ergonomic chair that actually supports your back can be a challenge. Many cheap office chairs sacrifice comfort and support for a lower price point, leaving you with aches and pains after a long day of work. But don't worry, we've got you covered. In this post, we'll explore the best budget office chairs under $150 that prioritize back support and comfort, so you can stay focused and healthy while working from home.
 
-#
-
 # What to Look For
 
 When shopping for a budget office chair, there are several key factors to consider. First, look for a chair with adjustable height and lumbar support, which will help you maintain a comfortable and healthy posture. Next, consider the material and breathability of the chair, as a well-ventilated seat and back can help keep you cool and dry during long work sessions. Additionally, think about the durability and sturdiness of the chair, as a cheap office chair that breaks easily can be a false economy in the long run. Finally, check the weight capacity and adjustability of the chair, to ensure it can accommodate your needs and preferences.
 
-#
-
 # Our Top Picks
 
-#
-
-## Homall Executive Swivel Chair
+## [Homall Executive Swivel Chair](https://www.amazon.com/s?k=Homall+Executive+Swivel+Chair&tag=wfhpicks-20)
 
 The Homall Executive Swivel Chair is a budget-friendly option that offers excellent back support and comfort. Estimated to cost between $60-$80, this chair features a sturdy metal frame, adjustable height and lumbar support, and a breathable mesh material. Pros include its ease of assembly, comfortable cushioning, and stylish design. One con is that the armrests are not adjustable. This chair is best for anyone looking for a basic, no-frills office chair that prioritizes comfort and support.
 
-#
-
-## Essentials by OFM ESS-3005
+## [Essentials by OFM ESS-3005](https://www.amazon.com/s?k=Essentials+by+OFM+ESS-3005&tag=wfhpicks-20)
 
 The Essentials by OFM ESS-3005 is a budget office chair that offers great value for its price. Estimated to cost between $100-$120, this chair features a sturdy metal frame, adjustable height and lumbar support, and a comfortable mesh material. Pros include its excellent back support, durable construction, and easy assembly. One con is that the seat cushion is not very thick. This chair is best for anyone who needs a reliable and comfortable office chair for long work sessions.
 
-#
-
-## Merax Computer Office Chair
+## [Merax Computer Office Chair](https://www.amazon.com/s?k=Merax+Computer+Office+Chair&tag=wfhpicks-20)
 
 The Merax Computer Office Chair is a budget-friendly option that offers a range of features and benefits. Estimated to cost between $80-$100, this chair features a sturdy metal frame, adjustable height and lumbar support, and a comfortable mesh material. Pros include its excellent back support, adjustable armrests, and stylish design. One con is that the chair can be a bit squeaky. This chair is best for anyone who wants a affordable ergonomic chair with a range of features and adjustments.
 
-#
-
-## AmazonBasics High-Back Executive Chair
+## [AmazonBasics High-Back Executive Chair](https://www.amazon.com/s?k=AmazonBasics+High-Back+Executive+Chair&tag=wfhpicks-20)
 
 The AmazonBasics High-Back Executive Chair is a budget office chair that offers great comfort and support. Estimated to cost between $120-$150, this chair features a sturdy metal frame, adjustable height and lumbar support, and a comfortable padded material. Pros include its excellent back support, durable construction, and stylish design. One con is that the chair can be a bit heavy. This chair is best for anyone who wants a high-quality, affordable office chair with a professional look and feel.
 
-#
-
-## Flash Furniture Mid-Back Office Chair
+## [Flash Furniture Mid-Back Office Chair](https://www.amazon.com/s?k=Flash+Furniture+Mid-Back+Office+Chair&tag=wfhpicks-20)
 
 The Flash Furniture Mid-Back Office Chair is a budget-friendly option that offers great value for its price. Estimated to cost between $50-$70, this chair features a sturdy metal frame, adjustable height and lumbar support, and a comfortable mesh material. Pros include its excellent back support, easy assembly, and affordable price. One con is that the chair can be a bit flimsy. This chair is best for anyone who needs a basic, affordable office chair for occasional use.
-
-#
 
 # Budget Tips
 
