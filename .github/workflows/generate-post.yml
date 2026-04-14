@@ -39,4 +39,5 @@ jobs:
           git config --global user.email "bot@budgetdeskhq.com"
           git add _posts/ topics/topics_used.json
           git diff --cached --quiet || git commit -m "chore: auto-publish daily post [skip ci]"
+          git pull --rebase origin main
           git push
