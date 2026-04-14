@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% seo %}
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+  {% endif %}
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}" />
+  {% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  <!-- Structured data for review posts -->
+  {% if page.layout == 'post' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ page.title | escape }}",
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.date | date_to_xmlschema }}",
+    "author": {
+      "@type": "Organization",
+      "name": "{{ site.author.name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title | escape }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ site.baseurl }}/assets/images/logo.png"
+      }
+    },
+    "description": "{{ page.description | escape }}"
+  }
+  </script>
+  {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ '/' | relative_url }}" class="site-title">🖥️ {{ site.title }}</a>
+      <p class="site-tagline">{{ site.description }}</p>
+    </div>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © {{ site.time | date: '%Y' }} {{ site.title }} |
+        <a href="{{ '/about/' | relative_url }}">About</a> |
+        <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
+      </p>
+      <p class="affiliate-footer">
+        <em>As an Amazon Associate, we earn from qualifying purchases.
+        This site participates in the Amazon Services LLC Associates Program.</em>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

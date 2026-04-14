@@ -1,0 +1,44 @@
+title: "Budget Desk HQ"
+description: "Honest reviews and buying guides for budget home office gear. Build the perfect work-from-home setup without breaking the bank."
+url: "https://YOUR_GITHUB_USERNAME.github.io"
+baseurl: "/budget-office-blog"
+
+author:
+  name: "Budget Desk HQ"
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+minima:
+  skin: classic
+
+# Affiliate tag placeholder — replace with your Amazon Associates tag
+amazon_affiliate_tag: "YOURAFFLTAG-20"
+
+# SEO defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+      amazon_affiliate_tag: "YOURAFFLTAG-20"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Exclude from build
+exclude:
+  - scripts/
+  - topics/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .github/

@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+    </p>
+  </header>
+
+  {% include affiliate-disclosure.html %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <div class="post-cta">
+    <h3>Looking for more budget home office picks?</h3>
+    <p>Browse our full reviews or check out the best deals on Amazon today.</p>
+    <a
+      href="https://www.amazon.com/s?k=budget+home+office+gear&tag={{ page.amazon_affiliate_tag | default: site.amazon_affiliate_tag }}"
+      class="btn-amazon"
+      target="_blank"
+      rel="noopener"
+    >Shop Budget Home Office Gear on Amazon →</a>
+  </div>
+</article>

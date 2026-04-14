@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="home">
+  <h1>Budget Home Office Gear Reviews &amp; Buying Guides</h1>
+  <p class="intro">
+    Build the best work-from-home setup on a budget. Honest reviews, comparisons,
+    and buying guides for monitors, keyboards, chairs, webcams, and more — all under $200.
+  </p>
+
+  <h2>Latest Reviews</h2>
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%b %-d, %Y" }}
+      </time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.description %}
+      <p class="post-excerpt">{{ post.description }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>

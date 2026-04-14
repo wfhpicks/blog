@@ -1,0 +1,42 @@
+name: Daily Post Generator
+
+on:
+  schedule:
+    # Runs every day at 08:00 UTC (4am ET / 1am PT)
+    - cron: "0 8 * * *"
+  workflow_dispatch:  # Allow manual trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate new blog post
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AMAZON_AFFILIATE_TAG: ${{ secrets.AMAZON_AFFILIATE_TAG }}
+        run: python scripts/generate_post.py
+
+      - name: Commit and push new post
+        run: |
+          git config --global user.name "Budget Desk Bot"
+          git config --global user.email "bot@budgetdeskhq.com"
+          git add _posts/ topics/topics_used.json
+          git diff --cached --quiet || git commit -m "chore: auto-publish daily post [skip ci]"
+          git push
