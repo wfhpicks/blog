@@ -178,17 +178,29 @@ amazon_search: "{topic["amazon_search"]}"
 
 
 # ── Save post ─────────────────────────────────────────────────────────────────
-def save_post(topic: dict, content: str) -> Path:
+def save_post(topic: dict, content: str, image: dict | None = None) -> Path:
     today = datetime.utcnow().strftime("%Y-%m-%d")
     slug = slugify(topic["title"])
     filename = POSTS_DIR / f"{today}-{slug}.md"
 
-    # Extract first sentence as excerpt for description meta tag
+    # Extract first sentence from clean text (before prepending hero HTML)
     first_sentence = re.split(r"(?<=[.!?])\s", content)[0]
     frontmatter = build_frontmatter(topic, first_sentence)
 
+    # Build hero image HTML (prepended to body, NOT included in description)
+    hero_md = ""
+    if image:
+        hero_md = (
+            f'<figure class="hero-image">\n'
+            f'  <img src="{image["url"]}" alt="{topic["title"]}" loading="lazy" />\n'
+            f'  <figcaption>Photo by <a href="{image["photographer_url"]}" '
+            f'target="_blank" rel="noopener">{image["photographer"]}</a> on '
+            f'<a href="{image["pexels_url"]}" target="_blank" rel="noopener">Pexels</a></figcaption>\n'
+            f'</figure>\n\n'
+        )
+
     POSTS_DIR.mkdir(parents=True, exist_ok=True)
-    filename.write_text(frontmatter + "\n" + content, encoding="utf-8")
+    filename.write_text(frontmatter + "\n" + hero_md + content, encoding="utf-8")
     print(f"Post saved: {filename.name}")
     return filename
 
@@ -209,22 +221,10 @@ def main():
     content = generate_post_content(topic)
     content = fix_markdown_spacing(content)
 
-    # Prepend hero image to post body
+    # Save post BEFORE prepending hero image so description extracts clean text
+    path = save_post(topic, content, image)
     if image:
-        hero_md = (
-            f'<figure class="hero-image">\n'
-            f'  <img src="{image["url"]}" alt="{topic["title"]}" loading="lazy" />\n'
-            f'  <figcaption>Photo by <a href="{image["photographer_url"]}" '
-            f'target="_blank" rel="noopener">{image["photographer"]}</a> on '
-            f'<a href="{image["pexels_url"]}" target="_blank" rel="noopener">Pexels</a></figcaption>\n'
-            f'</figure>\n\n'
-        )
-        content = hero_md + content
         print(f"Hero image: {image['url'][:60]}...")
-    else:
-        print("No hero image (PEXELS_API_KEY not set or fetch failed)")
-
-    path = save_post(topic, content)
     print(f"Done! New post written: {path}")
 
 

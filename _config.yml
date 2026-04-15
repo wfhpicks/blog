@@ -4,7 +4,7 @@ url: "https://wfhpicks.github.io"
 baseurl: "/blog"
 
 author:
-  name: "Budget Desk HQ"
+  name: "WFH Picks"
 
 theme: minima
 
@@ -16,7 +16,10 @@ plugins:
 minima:
   skin: classic
 
-# Affiliate tag placeholder — replace with your Amazon Associates tag
+# Show all posts regardless of date (future: true prevents posts from being hidden)
+future: true
+
+# Affiliate tag
 amazon_affiliate_tag: "wfhpicks-20"
 
 # SEO defaults

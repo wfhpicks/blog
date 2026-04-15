@@ -4,8 +4,7 @@ title: "Best Budget Monitor Arms and Desk Mounts"
 date: 2026-04-15
 categories: [reviews, home-office]
 tags: [budget-monitor-arm, cheap-monitor-mount, affordable-dual-monitor-stand]
-description: "<figure class='hero-image'>
-  <img src='https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' alt='Best"
+description: "Looking for the best budget monitor arm? We review top affordable desk mounts that free up space and improve ergonomics without breaking the bank."
 keywords: "budget monitor arm, cheap monitor mount, affordable dual monitor stand"
 image: /assets/images/og-default.png
 amazon_search: "budget monitor arm desk"
