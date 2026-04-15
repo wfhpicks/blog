@@ -135,8 +135,10 @@ REQUIREMENTS:
 
 def fix_markdown_spacing(content: str) -> str:
     """Normalize markdown: fix heading spacing and strip LLM artifacts."""
-    # Remove lone # / ## / ### lines with no text (common LLM artifact)
-    content = re.sub(r'(?m)^#{1,3}\s*$', '', content)
+    # Remove lone # lines (with optional surrounding whitespace) — common LLM artifact
+    content = re.sub(r'(?m)^[ \t]*#{1,6}[ \t]*\r?\n', '\n', content)
+    # Downgrade H1 headings (# Heading) to H2 (## Heading) — post title is already H1
+    content = re.sub(r'(?m)^# ([^\n#])', r'## \1', content)
     # Handle headings with NO preceding newline (LLM sometimes outputs text## Heading)
     content = re.sub(r'([^\n])(#{1,3} )', r'\1\n\n\2', content)
     # Handle headings with only a single preceding newline
